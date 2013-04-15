@@ -1,3 +1,4 @@
+rem This batch is to build the VB Wizard ZIP without Visual Studio
 @echo off
 %~d0
 cd /d %~dp0
