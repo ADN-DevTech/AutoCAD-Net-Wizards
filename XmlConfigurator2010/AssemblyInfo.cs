@@ -33,7 +33,7 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Autodesk, Inc.")]
 [assembly: AssemblyProduct("")]
-[assembly: AssemblyCopyright("Copyright ?Autodesk, Inc. All rights reserved.")]
+[assembly: AssemblyCopyright("Copyright Autodesk, Inc. All rights reserved.")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]		
 
