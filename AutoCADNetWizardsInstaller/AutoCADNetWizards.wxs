@@ -33,8 +33,8 @@
 	<?include property.wxi ?>
 	<?include UI.wxi ?>
 
-	<Condition Message="Microsoft Visual Studio Pro/Premium/Ultimate 2010/2012 or Visual Express Edition 2010/2012 must be present on the target machine.">
-		<![CDATA[VS2010_PRO OR VCS2010_EXPRESS OR VB2010_EXPRESS OR VS2012_PRO OR VCS2012_EXPRESS OR VB2012_EXPRESS OR VD2012_EXPRESS]]>
+	<Condition Message="Microsoft Visual Studio Pro/Premium/Ultimate 2010/2012/2013 or Visual Express Edition 2010/2012/2013 must be present on the target machine.">
+		<![CDATA[VS2010_PRO OR VCS2010_EXPRESS OR VB2010_EXPRESS OR VS2012_PRO OR VCS2012_EXPRESS OR VB2012_EXPRESS OR VD2012_EXPRESS OR VS2013_PRO OR VCS2013_EXPRESS OR VB2013_EXPRESS OR VD2013_EXPRESS]]>
 	</Condition>
 	<Condition Message="This application requires .NET Framework 4.0. Please install the .NET Framework then run this installer again.">
 		<![CDATA[MsiNetAssemblySupport >= "4.0"]]>

@@ -53,7 +53,27 @@
 		<RegistrySearch Id="__6026468D9DA44A15800D18A92F53AC68"
 			Root="HKLM" Key="SOFTWARE\Microsoft\WDExpress\11.0" Name="InstallDir" Type="directory" />
 	</Property>
-	
+	<!-- Visual Studio 2013 -->
+	<Property Id="VS2013_PRO">
+			<RegistrySearch Id="__AEFD420474C74EBB9E1196687E567A48"
+					Root="HKLM" Key="SOFTWARE\Microsoft\VisualStudio\12.0\Setup\VS" Name="ProductDir" Type="directory" />
+	</Property>
+	<!-- Visual Basic Express 2013 -->
+	<Property Id="VB2013_EXPRESS">
+			<RegistrySearch Id="__09B00C61E4224CAFA93739878CD136EC"
+					Root="HKLM" Key="SOFTWARE\Microsoft\VBExpress\12.0" Name="InstallDir" Type="directory" />
+	</Property>
+	<!-- Visual C# Express 2013 -->
+	<Property Id="VCS2013_EXPRESS">
+			<RegistrySearch Id="__1B42E48DA25C4612B6AC2942C65D010E"
+					Root="HKLM" Key="SOFTWARE\Microsoft\VCSExpress\12.0" Name="InstallDir" Type="directory" />
+	</Property>
+	<!-- Visual Studio Express 2013 for Desktop -->
+	<Property Id="VD2013_EXPRESS">
+			<RegistrySearch Id="__78F709557EA74B48AFD7A1A39E2643AA"
+					Root="HKLM" Key="SOFTWARE\Microsoft\WDExpress\12.0" Name="InstallDir" Type="directory" />
+	</Property>
+		
 	<!-- Visual Studio 2010 template folders -->
 	<Property Id="VS2010_PROJECT">
 		<RegistrySearch Id="__8F973449F7F1409C9106762E0B145527"
@@ -81,7 +101,25 @@
 		<RegistrySearch Id="__FB9154EFA9404D319F22FB9153DDEB11"
 			Root="HKCU" Key="Software\Microsoft\WDExpress\11.0" Name="UserItemTemplatesLocation" Type="directory" />
 	</Property>
-	
+	<!-- Visual Studio 2013 template folders -->
+	<Property Id="VS2013_PROJECT">
+			<RegistrySearch Id="__FBAE40988B854DAAAF0CCFA606346A13"
+					Root="HKCU" Key="Software\Microsoft\VisualStudio\12.0" Name="UserProjectTemplatesLocation" Type="directory" />
+	</Property>
+	<Property Id="VS2013_ITEM">
+			<RegistrySearch Id="__BF47BF1ADD6E454397AB4B2D3889AA18"
+					Root="HKCU" Key="Software\Microsoft\VisualStudio\12.0" Name="UserItemTemplatesLocation" Type="directory" />
+	</Property>
+	<!-- Visual Studio Express 2012 for Desktop -->
+	<Property Id="VD2013_PROJECT">
+			<RegistrySearch Id="__BA699420FC6A48F990ACFA2FA73D5CDB"
+					Root="HKCU" Key="Software\Microsoft\WDExpress\12.0" Name="UserProjectTemplatesLocation" Type="directory" />
+	</Property>
+	<Property Id="VD2013_ITEM">
+			<RegistrySearch Id="__6BDF66BF6FDD42EE8BCB6F868D26B0B5"
+					Root="HKCU" Key="Software\Microsoft\WDExpress\12.0" Name="UserItemTemplatesLocation" Type="directory" />
+	</Property>
+		
 	<!-- ARP support -->
 	<Property Id="ARPCOMMENTS" Value="Autodesk Developer Network" />
 	<Property Id="ARPCONTACT" Value="by Cyrille Fauvel" />
