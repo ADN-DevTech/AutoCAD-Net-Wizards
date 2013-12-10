@@ -3,7 +3,7 @@
 
 	<?define RTMProductVersion = "18.0.0"?> <!-- The first one - do not edit -->
 	<?define ProductVersion = "20.0.0"?>
-	<?define UpgradeCode = "{676730F7-E622-467B-9895-45FB674A0348}"?>
+	<?define UpgradeCode = "{6894135C-6FF7-48CD-B4B1-4C084B67FE7C}"?>
 	
 	<Product 
 		Id="*" 
