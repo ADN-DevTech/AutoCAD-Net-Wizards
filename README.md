@@ -22,7 +22,7 @@ IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 
-Autodesk-ReCap-Samples
+AutoCAD .NET Wizards
 =======================
 
 The installation file is in \AutoCADNetWizardsInstaller\
