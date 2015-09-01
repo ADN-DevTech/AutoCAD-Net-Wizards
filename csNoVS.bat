@@ -12,7 +12,7 @@ cd "Output\%ProjectName%"
 
 if exist "..\%ProjectName%.zip" del "..\%ProjectName%.zip"
 del *.* /s /q > nul
-copy /Y "%ProjectDir%%ProjectName% - 2014.csproj" ".\%ProjectName%.csproj" > nul
+copy /Y "%ProjectDir%%ProjectName% - 2017.csproj" ".\%ProjectName%.csproj" > nul
 copy /Y "%ProjectDir%myPlugin.cs" . > nul
 copy /Y "%ProjectDir%myCommands.cs" . > nul
 copy /Y "%ProjectDir%myCommands.resx" . > nul

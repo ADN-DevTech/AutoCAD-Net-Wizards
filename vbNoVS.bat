@@ -13,7 +13,7 @@ cd "Output\%ProjectName%"
 
 if exist "..\%ProjectName%.zip" del "..\%ProjectName%.zip"
 del *.* /s /q > nul
-copy /Y "%ProjectDir%%ProjectName% - 2014.vbproj" ".\%ProjectName%.vbproj" > nul
+copy /Y "%ProjectDir%%ProjectName% - 2017.vbproj" ".\%ProjectName%.vbproj" > nul
 copy /Y "%ProjectDir%myPlugin.vb" . > nul
 copy /Y "%ProjectDir%myCommands.vb" . > nul
 copy /Y "%ProjectDir%myCommands.resx" . > nul

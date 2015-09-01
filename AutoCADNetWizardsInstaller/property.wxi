@@ -13,9 +13,9 @@
 	<CustomAction Id="CA_TARGETDIR" Property="TARGETDIR" Value="[ProgramFilesFolder][Manufacturer]\[ProductName]" Execute="firstSequence" />
 	<!-- Property Id="TARGETDIR"  Value="[ProgramFilesFolder][Manufacturer]\[ProductName]\" / -->
 
-	<Property Id="ACAD" Value="C:\Program Files\Autodesk\AutoCAD 2014\">
+	<Property Id="ACAD" Value="C:\Program Files\Autodesk\AutoCAD 2015\">
 		<RegistrySearch Id="__427D247C67494BD09B6055D05EEB4F8D" 
-			Root="HKCU" Key="Software\Autodesk\AutoCAD\R19.1\ACAD-B001\Install" Name="INSTALLDIR" Type="directory" />
+			Root="HKCU" Key="Software\Autodesk\AutoCAD\R20.0\ACAD-E001\Install" Name="INSTALLDIR" Type="directory" />
 	</Property>
 	
 	<!-- Visual Studio 2010 -->
@@ -55,25 +55,47 @@
 	</Property>
 	<!-- Visual Studio 2013 -->
 	<Property Id="VS2013_PRO">
-			<RegistrySearch Id="__AEFD420474C74EBB9E1196687E567A48"
-					Root="HKLM" Key="SOFTWARE\Microsoft\VisualStudio\12.0\Setup\VS" Name="ProductDir" Type="directory" />
+		<RegistrySearch Id="__AEFD420474C74EBB9E1196687E567A48"
+			Root="HKLM" Key="SOFTWARE\Microsoft\VisualStudio\12.0\Setup\VS" Name="ProductDir" Type="directory" />
 	</Property>
 	<!-- Visual Basic Express 2013 -->
 	<Property Id="VB2013_EXPRESS">
-			<RegistrySearch Id="__09B00C61E4224CAFA93739878CD136EC"
-					Root="HKLM" Key="SOFTWARE\Microsoft\VBExpress\12.0" Name="InstallDir" Type="directory" />
+		<RegistrySearch Id="__09B00C61E4224CAFA93739878CD136EC"
+			Root="HKLM" Key="SOFTWARE\Microsoft\VBExpress\12.0" Name="InstallDir" Type="directory" />
 	</Property>
 	<!-- Visual C# Express 2013 -->
 	<Property Id="VCS2013_EXPRESS">
-			<RegistrySearch Id="__1B42E48DA25C4612B6AC2942C65D010E"
-					Root="HKLM" Key="SOFTWARE\Microsoft\VCSExpress\12.0" Name="InstallDir" Type="directory" />
+		<RegistrySearch Id="__1B42E48DA25C4612B6AC2942C65D010E"
+			Root="HKLM" Key="SOFTWARE\Microsoft\VCSExpress\12.0" Name="InstallDir" Type="directory" />
 	</Property>
 	<!-- Visual Studio Express 2013 for Desktop -->
 	<Property Id="VD2013_EXPRESS">
-			<RegistrySearch Id="__78F709557EA74B48AFD7A1A39E2643AA"
-					Root="HKLM" Key="SOFTWARE\Microsoft\WDExpress\12.0" Name="InstallDir" Type="directory" />
+		<RegistrySearch Id="__78F709557EA74B48AFD7A1A39E2643AA"
+			Root="HKLM" Key="SOFTWARE\Microsoft\WDExpress\12.0" Name="InstallDir" Type="directory" />
 	</Property>
-		
+
+	<!---Visual Studio 2015-->
+	
+	<Property Id="VS2015_PRO">
+		<RegistrySearch Id="__BF285F266A704194BC7B1F45A7FDA8ED"
+			Root="HKLM" Key="SOFTWARE\Microsoft\VisualStudio\14.0\Setup\VS" Name="ProductDir" Type="directory" />
+	</Property>
+	<!-- Visual Basic Express 2015 -->
+	<Property Id="VB2015_EXPRESS">
+		<RegistrySearch Id="__036683BB4FB04107B8B8215EEA0A28A7"
+			Root="HKLM" Key="SOFTWARE\Microsoft\VBExpress\14.0" Name="InstallDir" Type="directory" />
+	</Property>
+	<!-- Visual C# Express 2015 -->
+	<Property Id="VCS2015_EXPRESS">
+		<RegistrySearch Id="__75E5DEE88F644A34BDE469C14AF0F049"
+			Root="HKLM" Key="SOFTWARE\Microsoft\VCSExpress\14.0" Name="InstallDir" Type="directory" />
+	</Property>
+	<!-- Visual Studio Express 2015 for Desktop -->
+	<Property Id="VD2015_EXPRESS">
+		<RegistrySearch Id="__8B201C2E9E7F4E109ADB7B6BE83E7A1E"
+			Root="HKLM" Key="SOFTWARE\Microsoft\WDExpress\14.0" Name="InstallDir" Type="directory" />
+	</Property>
+	 
 	<!-- Visual Studio 2010 template folders -->
 	<Property Id="VS2010_PROJECT">
 		<RegistrySearch Id="__8F973449F7F1409C9106762E0B145527"
@@ -103,23 +125,43 @@
 	</Property>
 	<!-- Visual Studio 2013 template folders -->
 	<Property Id="VS2013_PROJECT">
-			<RegistrySearch Id="__FBAE40988B854DAAAF0CCFA606346A13"
-					Root="HKCU" Key="Software\Microsoft\VisualStudio\12.0" Name="UserProjectTemplatesLocation" Type="directory" />
+		<RegistrySearch Id="__FBAE40988B854DAAAF0CCFA606346A13"
+			Root="HKCU" Key="Software\Microsoft\VisualStudio\12.0" Name="UserProjectTemplatesLocation" Type="directory" />
 	</Property>
 	<Property Id="VS2013_ITEM">
-			<RegistrySearch Id="__BF47BF1ADD6E454397AB4B2D3889AA18"
-					Root="HKCU" Key="Software\Microsoft\VisualStudio\12.0" Name="UserItemTemplatesLocation" Type="directory" />
+		<RegistrySearch Id="__BF47BF1ADD6E454397AB4B2D3889AA18"
+			Root="HKCU" Key="Software\Microsoft\VisualStudio\12.0" Name="UserItemTemplatesLocation" Type="directory" />
 	</Property>
 	<!-- Visual Studio Express 2012 for Desktop -->
 	<Property Id="VD2013_PROJECT">
-			<RegistrySearch Id="__BA699420FC6A48F990ACFA2FA73D5CDB"
-					Root="HKCU" Key="Software\Microsoft\WDExpress\12.0" Name="UserProjectTemplatesLocation" Type="directory" />
+		<RegistrySearch Id="__BA699420FC6A48F990ACFA2FA73D5CDB"
+			Root="HKCU" Key="Software\Microsoft\WDExpress\12.0" Name="UserProjectTemplatesLocation" Type="directory" />
 	</Property>
 	<Property Id="VD2013_ITEM">
-			<RegistrySearch Id="__6BDF66BF6FDD42EE8BCB6F868D26B0B5"
-					Root="HKCU" Key="Software\Microsoft\WDExpress\12.0" Name="UserItemTemplatesLocation" Type="directory" />
+		<RegistrySearch Id="__6BDF66BF6FDD42EE8BCB6F868D26B0B5"
+			Root="HKCU" Key="Software\Microsoft\WDExpress\12.0" Name="UserItemTemplatesLocation" Type="directory" />
 	</Property>
-		
+
+
+	<!-- Visual Studio 2015 template folders -->
+	<Property Id="VS2015_PROJECT">
+		<RegistrySearch Id="__6CF4070061214894A9E13324550FEEFB"
+			Root="HKCU" Key="Software\Microsoft\VisualStudio\14.0" Name="UserProjectTemplatesLocation" Type="directory" />
+	</Property>
+	<Property Id="VS2015_ITEM">
+		<RegistrySearch Id="__565649E12DA143998A729717506D85E0"
+			Root="HKCU" Key="Software\Microsoft\VisualStudio\14.0" Name="UserItemTemplatesLocation" Type="directory" />
+	</Property>
+	<!-- Visual Studio Express 2015 for Desktop -->
+	<Property Id="VD2015_PROJECT">
+		<RegistrySearch Id="__403CC3BA0EC14416A281D21967BFEA0E"
+			Root="HKCU" Key="Software\Microsoft\WDExpress\14.0" Name="UserProjectTemplatesLocation" Type="directory" />
+	</Property>
+	<Property Id="VD2015_ITEM">
+		<RegistrySearch Id="__3145BC6231B549A2A94473DBA4BBF14E"
+			Root="HKCU" Key="Software\Microsoft\WDExpress\14.0" Name="UserItemTemplatesLocation" Type="directory" />
+	</Property>
+	
 	<!-- ARP support -->
 	<Property Id="ARPCOMMENTS" Value="Autodesk Developer Network" />
 	<Property Id="ARPCONTACT" Value="by Cyrille Fauvel" />
