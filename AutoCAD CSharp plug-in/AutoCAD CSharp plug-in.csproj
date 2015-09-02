@@ -79,7 +79,9 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Template Data\MyTemplate.vstemplate" />
+    <None Include="Template Data\MyTemplate.vstemplate">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Template Data\__TemplateIcon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
@@ -90,7 +92,7 @@ mkdir "$(SolutionDir)Output\$(ProjectName)\Properties" 2&gt;nul
 cd "$(SolutionDir)Output\$(ProjectName)"
 if exist "$(SolutionDir)Output\$(ProjectName).zip" del "$(SolutionDir)Output\$(ProjectName).zip"
 del *.* /s /q &gt; nul
-copy /Y "$(ProjectDir)$(ProjectName) - 2014.csproj" ".\$(ProjectName).csproj" &gt; nul
+copy /Y "$(ProjectDir)$(ProjectName) - 2016.csproj" ".\$(ProjectName).csproj" &gt; nul
 copy /Y "$(ProjectDir)myPlugin.cs" . &gt; nul
 copy /Y "$(ProjectDir)myCommands.cs" . &gt; nul
 copy /Y "$(ProjectDir)myCommands.resx" . &gt; nul
