@@ -29,7 +29,7 @@ The installation file is in \AutoCADNetWizardsInstaller\
 
 AutoCADNetWizards.msi or
 
-AutoCAD_2014_dotnet_wizards.zip
+AutoCAD_2016_dotnet_wizards.zip
 
 
 Installing a managed DLL into the GAC on a developer machine without installer
