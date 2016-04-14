@@ -9,7 +9,7 @@
     </SchemaVersion>
     <ProjectGuid>{60CD007E-34DC-42B2-8A6C-5C7D59184DE5}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <AppDesignerFolder>Properti6</AppDesignerFolder>
     <RootNamespace>AutoCAD_CSharp_plug_in</RootNamespace>
     <AssemblyName>AutoCAD CSharp plug-in</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
@@ -69,6 +69,7 @@
   <ItemGroup>
     <EmbeddedResource Include="myCommands.resx">
       <DependentUpon>myCommands.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -8,7 +8,7 @@ subst w: "C:\Program Files (x86)\WiX Toolset v3.8"
 w:\bin\candle.exe AutoCADNetWizards.wxs -out temp\AutoCADNetWizards.wixobj
 w:\bin\light.exe -ext "w:\bin\WixNetFxExtension.dll" -sw1076 -b .. temp\AutoCADNetWizards.wixobj -out AutoCADNetWizards.msi 
 REM rem -ext WixUIExtension
- if exist AutoCAD_2015_dotnet_wizards.zip del AutoCAD_2015_dotnet_wizards.zip > nul
-"C:\Program Files\WinRAR\WinRAR.exe" a AutoCAD_2016_dotnet_wizards.zip AutoCADNetWizards.msi > nul
+ if exist AutoCAD_2017_dotnet_wizards.zip del AutoCAD_2017_dotnet_wizards.zip > nul
+"C:\Program Files\WinRAR\WinRAR.exe" a AutoCAD_2017_dotnet_wizards.zip AutoCADNetWizards.msi > nul
 
 pause

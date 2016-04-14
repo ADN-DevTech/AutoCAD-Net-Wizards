@@ -5,8 +5,8 @@
     <ProjectType>VisualBasic</ProjectType>
     <ProjectSubType></ProjectSubType>
     <SortOrder>1000</SortOrder>
-	<RequiredFrameworkVersion>4.5</RequiredFrameworkVersion>
-	<MaxFrameworkVersion>4.5</MaxFrameworkVersion>
+	<RequiredFrameworkVersion>4.6</RequiredFrameworkVersion>
+	<MaxFrameworkVersion>4.6</MaxFrameworkVersion>
 	<TemplateID>Autodesk.CSharp.AutoCAD191_plugin</TemplateID>
     <CreateNewFolder>true</CreateNewFolder>
     <DefaultName>AutoCAD VB plug-in</DefaultName>
