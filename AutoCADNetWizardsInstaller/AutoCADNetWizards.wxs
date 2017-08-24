@@ -2,15 +2,15 @@
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
 
 	<?define RTMProductVersion = "18.0.0"?> <!-- The first one - do not edit -->
-	<?define ProductVersion = "19.1.0"?>
-	<?define UpgradeCode = "{97E53743-4A36-4C10-9433-001F251C90A9}"?>
+	<?define ProductVersion = "20.0.0"?>
+	<?define UpgradeCode = "{6894135C-6FF7-48CD-B4B1-4C084B67FE7C}"?>
 	
 	<Product 
 		Id="*" 
 		Codepage="1252" 
 		Language="1033" 
 		Manufacturer="Autodesk" 
-		Name="AutoCAD 2014 .NET Wizards" 
+		Name="AutoCAD 2017 .NET Wizards" 
 		UpgradeCode="$(var.UpgradeCode)" 
 		Version="$(var.ProductVersion)"
 	>
@@ -33,11 +33,14 @@
 	<?include property.wxi ?>
 	<?include UI.wxi ?>
 
-	<Condition Message="Microsoft Visual Studio Pro/Premium/Ultimate 2010/2012/2013 or Visual Express Edition 2010/2012/2013 must be present on the target machine.">
-		<![CDATA[VS2010_PRO OR VCS2010_EXPRESS OR VB2010_EXPRESS OR VS2012_PRO OR VCS2012_EXPRESS OR VB2012_EXPRESS OR VD2012_EXPRESS OR VS2013_PRO OR VCS2013_EXPRESS OR VB2013_EXPRESS OR VD2013_EXPRESS]]>
+	<PropertyRef Id="NETFRAMEWORK40FULL"/>
+	<PropertyRef Id="NETFRAMEWORK45"/>
+
+	<Condition Message="Microsoft Visual Studio Pro/Premium/Ultimate 2015 or Visual Express Edition 2015 must be present on the target machine.">
+		<![CDATA[VS2015_PRO OR VCS2015_EXPRESS OR VB2015_EXPRESS OR VD2015_EXPRESS]]>
 	</Condition>
-	<Condition Message="This application requires .NET Framework 4.0. Please install the .NET Framework then run this installer again.">
-		<![CDATA[MsiNetAssemblySupport >= "4.0"]]>
+	<Condition Message="This application requires .NET Framework 4.5. Please install the .NET Framework then run this installer again.">
+		<![CDATA[Installed OR NETFRAMEWORK45]]>
 	</Condition>
 	<!-- Condition Message="You need to be an administrator to install this product.">
 		Privileged

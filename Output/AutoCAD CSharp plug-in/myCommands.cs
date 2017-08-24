@@ -34,7 +34,14 @@ namespace $safeprojectname$
         public void MyCommand() // This method can have any name
         {
             // Put your command code here
+			Document doc = Application.DocumentManager.MdiActiveDocument;
+            Editor ed ;
+            if (doc != null)
+            {
+                ed = doc.Editor;
+                ed.WriteMessage("Hello, this is your first command.");
 
+            }
         }
 
         // Modal Command with pickfirst selection
