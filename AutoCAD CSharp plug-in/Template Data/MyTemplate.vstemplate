@@ -1,12 +1,12 @@
 <VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
   <TemplateData>
-    <Name>AutoCAD 2018 CSharp plug-in</Name>
+    <Name>AutoCAD 2019 CSharp plug-in</Name>
     <Description>This is a basic AutoCAD Plugin in C#</Description>
     <ProjectType>CSharp</ProjectType>
     <ProjectSubType></ProjectSubType>
     <SortOrder>1000</SortOrder>
-	<RequiredFrameworkVersion>4.6</RequiredFrameworkVersion>
-	<MaxFrameworkVersion>4.6</MaxFrameworkVersion>
+	<RequiredFrameworkVersion>4.7</RequiredFrameworkVersion>
+	<MaxFrameworkVersion>4.7.1</MaxFrameworkVersion>
 	<TemplateID>Autodesk.CSharp.AutoCAD191_plugin</TemplateID>
     <CreateNewFolder>true</CreateNewFolder>
     <DefaultName>AutoCAD CSharp plug-in</DefaultName>

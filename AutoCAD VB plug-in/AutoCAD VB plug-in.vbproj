@@ -1,19 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>
-    </ProductVersion>
-    <SchemaVersion>
-    </SchemaVersion>
+    <ProjectTypeGuids>{82b43b9b-a64c-4715-b499-d71e9ca2bd60};{F184B08F-C81C-45f6-A57F-5ABD9991F28F}</ProjectTypeGuids>
     <ProjectGuid>{3728FE3E-68BD-4DEC-8E7F-870C262B4D6A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>AutoCAD_VB_plug_in</RootNamespace>
     <AssemblyName>AutoCAD VB plug-in</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>Windows</MyType>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
@@ -34,6 +36,7 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -44,6 +47,7 @@
     <DocumentationFile>AutoCAD VB plug-in.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -54,6 +58,7 @@
     <DocumentationFile>AutoCAD VB plug-in.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
     <OptionExplicit>On</OptionExplicit>
@@ -68,9 +73,6 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="WindowsBase">
-      <RequiredTargetFramework>3.0</RequiredTargetFramework>
-    </Reference>
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
@@ -150,6 +152,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Settings.settings" />
     <None Include="Template Data\MyTemplate.vstemplate">
       <SubType>Designer</SubType>
     </None>
@@ -157,6 +160,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="My Project\MyApplication.myapp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Application.Designer.vb" />
+    <None Include="AssemblyInfo.vb" />
+    <None Include="Resources.Designer.vb" />
+    <Compile Include="Settings.Designer.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources.resx" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <PropertyGroup>
@@ -174,9 +186,9 @@ copy /Y "$(ProjectDir)myCommands.Designer.vb" .
 copy /Y "$(ProjectDir)My Project\*.*" ".\My Project"
 copy /Y "$(ProjectDir)Template Data\__TemplateIcon.ico" . &gt; nul
 copy /Y "$(ProjectDir)Template Data\MyTemplate.vstemplate" . &gt; nul
-"C:\Program Files\WinRAR\WinRAR.exe" a -r "..\$(ProjectName).zip" *.*
+"C:\Utils\7z.exe" a -r "..\$(ProjectName).zip" *.*
 copy /Y "$(ProjectDir)Template Data\MyTemplate - WDExpress.vstemplate" "MyTemplate.vstemplate" &gt; nul
-"C:\Program Files\WinRAR\WinRAR.exe" a -r "..\$(ProjectName)-WD.zip" *.* &gt; nul</PostBuildEvent>
+"C:\Utils\7z.exe" a -r "..\$(ProjectName)-WD.zip" *.* &gt; nul</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

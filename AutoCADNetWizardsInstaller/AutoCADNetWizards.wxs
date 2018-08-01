@@ -10,7 +10,7 @@
 		Codepage="1252" 
 		Language="1033" 
 		Manufacturer="Autodesk" 
-		Name="AutoCAD 2017 .NET Wizards" 
+		Name="AutoCAD 2019 .NET Wizards" 
 		UpgradeCode="$(var.UpgradeCode)" 
 		Version="$(var.ProductVersion)"
 	>
@@ -21,7 +21,7 @@
 		InstallPrivileges="elevated" 			
 		InstallerVersion="300" 
 		Languages="1033" 
-		Manufacturer="by Cyrille Fauvel" 
+		Manufacturer="by Cyrille Fauvel,Madhukar Moogala" 
 		Platform="x86"
 	/>
 
@@ -32,20 +32,20 @@
 	<?include feature.wxi ?>
 	<?include property.wxi ?>
 	<?include UI.wxi ?>
+  <?define NetFx47MinRelease = 460798 ?>
 
-	<PropertyRef Id="NETFRAMEWORK40FULL"/>
-	<PropertyRef Id="NETFRAMEWORK45"/>
+<!--Until support comes from the extension
+i.e. <PropertyRef Id="WIX_IS_NETFRAMEWORK_47_OR_LATER_INSTALLED" />-->
 
-	<Condition Message="Microsoft Visual Studio Pro/Premium/Ultimate 2015 or Visual Express Edition 2015 must be present on the target machine.">
-		<![CDATA[VS2015_PRO OR VCS2015_EXPRESS OR VB2015_EXPRESS OR VD2015_EXPRESS]]>
+    <Condition Message="[ProductName] Requires .NET Framework 4.7 or later to be installed">
+      <!--<![CDATA[NETFW47="#460798" OR NETFW47="#460805" OR NETFW47="#461308" OR NETFW47="#461310"]]>-->
+      <![CDATA[NETFW47 >="#$(var.NetFx47MinRelease)"]]>
+    </Condition>
+    
+	<Condition Message="Microsoft Visual Studio Pro/Premium/Ultimate 2017 or Visual Community Edition 2017 must be present on the target machine.">
+    <![CDATA[VS2017_PRO_VC]]>
 	</Condition>
-	<Condition Message="This application requires .NET Framework 4.5. Please install the .NET Framework then run this installer again.">
-		<![CDATA[Installed OR NETFRAMEWORK45]]>
-	</Condition>
-	<!-- Condition Message="You need to be an administrator to install this product.">
-		Privileged
-	</Condition -->
-	
+
 	<InstallUISequence> <!-- msiexec /i -->
 		<Custom Action="CA_TARGETDIR" After="AppSearch"><![CDATA[TARGETDIR=""]]></Custom>
 		<Show Dialog="WelcomeForm" Before="CostFinalize"><![CDATA[Installed="" AND NOT RESUME]]></Show>
@@ -56,12 +56,10 @@
 		<Show Dialog="FatalErrorForm" OnExit="error"><![CDATA[NOT HideFatalErrorForm]]></Show>
 		<Show Dialog="UserExitForm" OnExit="cancel" />
 		<Show Dialog="FinishedForm" OnExit="success" />
-
 		<Custom Action="PreventDowngrading" After="FindRelatedProducts"><![CDATA[NEWERPRODUCTFOUND]]></Custom>
 	</InstallUISequence>
 	<InstallExecuteSequence>
-		<Custom Action="CA_TARGETDIR" Before="CostInitialize"><![CDATA[TARGETDIR=""]]></Custom>
-		
+		<Custom Action="CA_TARGETDIR" Before="CostInitialize"><![CDATA[TARGETDIR=""]]></Custom>		
 		<Custom Action="PreventDowngrading" After="FindRelatedProducts"><![CDATA[NEWERPRODUCTFOUND]]></Custom>
 		<RemoveExistingProducts Before="InstallInitialize" /> 
 	</InstallExecuteSequence>
