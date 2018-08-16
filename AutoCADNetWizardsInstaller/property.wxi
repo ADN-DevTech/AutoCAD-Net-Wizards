@@ -19,8 +19,8 @@
     <RegistrySearch Id="__427D247C67494BD09B6055D05EEB4F8D"
 				Root="HKLM" Key="SOFTWARE\Autodesk\AutoCAD\R23.0\ACAD-2001\Install" Name="INSTALLDIR" Type="directory" />
   </Property>
-  <!--[WindowsVolume] is needed here, the Property value will not get overwrittne-->
-  <Property Id="VS2017_PRO" Value="[WindowsVolume]">
+  
+  <Property Id="VS2017_PRO">
     <DirectorySearch Id="FindTemplatesDirectory" Path="[%USERPROFILE]\Documents\Visual Studio 2017\Templates\ProjectTemplates"/>
   </Property>
   <Property Id="VS2017_PRO_VC">
