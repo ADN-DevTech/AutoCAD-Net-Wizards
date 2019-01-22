@@ -2,15 +2,15 @@
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
 
 	<?define RTMProductVersion = "18.0.0"?> <!-- The first one - do not edit -->
-	<?define ProductVersion = "19.1.0"?>
-	<?define UpgradeCode = "{97E53743-4A36-4C10-9433-001F251C90A9}"?>
+	<?define ProductVersion = "20.0.0"?>
+	<?define UpgradeCode = "{6894135C-6FF7-48CD-B4B1-4C084B67FE7C}"?>
 	
 	<Product 
 		Id="*" 
 		Codepage="1252" 
 		Language="1033" 
 		Manufacturer="Autodesk" 
-		Name="AutoCAD 2014 .NET Wizards" 
+		Name="AutoCAD 2019 .NET Wizards" 
 		UpgradeCode="$(var.UpgradeCode)" 
 		Version="$(var.ProductVersion)"
 	>
@@ -21,7 +21,7 @@
 		InstallPrivileges="elevated" 			
 		InstallerVersion="300" 
 		Languages="1033" 
-		Manufacturer="by Cyrille Fauvel" 
+		Manufacturer="by Cyrille Fauvel,Madhukar Moogala" 
 		Platform="x86"
 	/>
 
@@ -32,17 +32,20 @@
 	<?include feature.wxi ?>
 	<?include property.wxi ?>
 	<?include UI.wxi ?>
+  <?define NetFx47MinRelease = 460798 ?>
 
-	<Condition Message="Microsoft Visual Studio Pro/Premium/Ultimate 2010/2012/2013 or Visual Express Edition 2010/2012/2013 must be present on the target machine.">
-		<![CDATA[VS2010_PRO OR VCS2010_EXPRESS OR VB2010_EXPRESS OR VS2012_PRO OR VCS2012_EXPRESS OR VB2012_EXPRESS OR VD2012_EXPRESS OR VS2013_PRO OR VCS2013_EXPRESS OR VB2013_EXPRESS OR VD2013_EXPRESS]]>
+<!--Until support comes from the extension
+i.e. <PropertyRef Id="WIX_IS_NETFRAMEWORK_47_OR_LATER_INSTALLED" />-->
+
+    <Condition Message="[ProductName] Requires .NET Framework 4.7 or later to be installed">
+      <!--<![CDATA[NETFW47="#460798" OR NETFW47="#460805" OR NETFW47="#461308" OR NETFW47="#461310"]]>-->
+      <![CDATA[NETFW47 >="#$(var.NetFx47MinRelease)"]]>
+    </Condition>
+    
+	<Condition Message="Microsoft Visual Studio Pro/Premium/Ultimate 2017 or Visual Community Edition 2017 must be present on the target machine.">
+    <![CDATA[VS2017_PRO_VC]]>
 	</Condition>
-	<Condition Message="This application requires .NET Framework 4.0. Please install the .NET Framework then run this installer again.">
-		<![CDATA[MsiNetAssemblySupport >= "4.0"]]>
-	</Condition>
-	<!-- Condition Message="You need to be an administrator to install this product.">
-		Privileged
-	</Condition -->
-	
+
 	<InstallUISequence> <!-- msiexec /i -->
 		<Custom Action="CA_TARGETDIR" After="AppSearch"><![CDATA[TARGETDIR=""]]></Custom>
 		<Show Dialog="WelcomeForm" Before="CostFinalize"><![CDATA[Installed="" AND NOT RESUME]]></Show>
@@ -53,12 +56,10 @@
 		<Show Dialog="FatalErrorForm" OnExit="error"><![CDATA[NOT HideFatalErrorForm]]></Show>
 		<Show Dialog="UserExitForm" OnExit="cancel" />
 		<Show Dialog="FinishedForm" OnExit="success" />
-
 		<Custom Action="PreventDowngrading" After="FindRelatedProducts"><![CDATA[NEWERPRODUCTFOUND]]></Custom>
 	</InstallUISequence>
 	<InstallExecuteSequence>
-		<Custom Action="CA_TARGETDIR" Before="CostInitialize"><![CDATA[TARGETDIR=""]]></Custom>
-		
+		<Custom Action="CA_TARGETDIR" Before="CostInitialize"><![CDATA[TARGETDIR=""]]></Custom>		
 		<Custom Action="PreventDowngrading" After="FindRelatedProducts"><![CDATA[NEWERPRODUCTFOUND]]></Custom>
 		<RemoveExistingProducts Before="InstallInitialize" /> 
 	</InstallExecuteSequence>

@@ -42,10 +42,11 @@ namespace ObjectARXLocatorWizard
 		{
 			InitializeComponent();
 			//- Read path from last time
-			mConfig = new XmlConfigurator.XmlConfig(Wizard.AddInCompany, Wizard.AddInProductName, Wizard.AddInBaseConfigName);
-			this.sdkpath.Text = mConfig.ValueAt(".//Autodesk/Wizards/ObjectARX/Location");
-			//this.sdkpath.Text ="C:\\Users\\cyrille\\__sdk\\ObjectARX\\2010_Gator" ;
-			this.acadpath.Text = mConfig.ValueAt(".//Autodesk/Wizards/ObjectARX/AcadLocation");
+            mConfig = new XmlConfigurator.XmlConfig(Wizard.AddInCompany, Wizard.AddInProductName, Wizard.AddInBaseConfigName);
+        
+            this.sdkpath.Text = mConfig.ValueAt(".//Autodesk/Wizards/ObjectARX/Location");
+            //this.sdkpath.Text ="C:\\Users\\cyrille\\__sdk\\ObjectARX\\2010_Gator" ;
+            this.acadpath.Text = mConfig.ValueAt(".//Autodesk/Wizards/ObjectARX/AcadLocation");
 		   
 		}
 
@@ -56,8 +57,8 @@ namespace ObjectARXLocatorWizard
 				string path = this.folderBrowserDialog.SelectedPath;
 				this.sdkpath.Text = path;
 				//- Save path for next time
-				mConfig.SetValueAt(".//Autodesk/Wizards/ObjectARX/Location", path);
-				mConfig.Save();
+                mConfig.SetValueAt(".//Autodesk/Wizards/ObjectARX/Location", path);
+                mConfig.Save();
 				
 				//It is OK without SDK for vertical products, for ACAD it is a must.
 				//this.button1.Enabled = (this.sdkpath.Text.Trim().Length != 0
