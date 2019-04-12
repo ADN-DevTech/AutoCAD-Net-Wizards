@@ -1,12 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.572
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoCAD CSharp plug-in", "AutoCAD CSharp plug-in\AutoCAD CSharp plug-in.csproj", "{60CD007E-34DC-42B2-8A6C-5C7D59184DE5}"
-	ProjectSection(ProjectDependencies) = postProject
-		{3728FE3E-68BD-4DEC-8E7F-870C262B4D6A} = {3728FE3E-68BD-4DEC-8E7F-870C262B4D6A}
-		{A045EA66-7719-41B9-A422-0392885A595C} = {A045EA66-7719-41B9-A422-0392885A595C}
-		{3B69A4AD-360E-49F9-9A79-3FD35D1D15D2} = {3B69A4AD-360E-49F9-9A79-3FD35D1D15D2}
-	EndProjectSection
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "AutoCAD VB plug-in", "AutoCAD VB plug-in\AutoCAD VB plug-in.vbproj", "{3728FE3E-68BD-4DEC-8E7F-870C262B4D6A}"
 EndProject
@@ -39,5 +36,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {16F3DA32-4CE5-4F2E-A7BD-4EAAF06DE463}
 	EndGlobalSection
 EndGlobal

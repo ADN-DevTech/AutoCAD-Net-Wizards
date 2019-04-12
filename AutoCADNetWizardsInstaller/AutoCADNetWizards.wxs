@@ -10,7 +10,7 @@
 		Codepage="1252" 
 		Language="1033" 
 		Manufacturer="Autodesk" 
-		Name="AutoCAD 2019 .NET Wizards" 
+		Name="AutoCAD 2020 .NET Wizards" 
 		UpgradeCode="$(var.UpgradeCode)" 
 		Version="$(var.ProductVersion)"
 	>

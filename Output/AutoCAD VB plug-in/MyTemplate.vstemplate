@@ -1,13 +1,15 @@
 <VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
   <TemplateData>
-    <Name>AutoCAD 2016 VB plug-in</Name>
-    <Description>This is a basic AutoCAD Plugin in VB.net</Description>
-    <ProjectType>VisualBasic</ProjectType>
+    <Name>AutoCAD 2020 CSharp plug-in</Name>
+    <Description>This is a basic AutoCAD Plugin in C#</Description>
+    <ProjectType>CSharp</ProjectType>
     <ProjectSubType></ProjectSubType>
     <SortOrder>1000</SortOrder>
+	<RequiredFrameworkVersion>4.7</RequiredFrameworkVersion>
+	<MaxFrameworkVersion>4.7.2</MaxFrameworkVersion>
 	<TemplateID>Autodesk.CSharp.AutoCAD191_plugin</TemplateID>
     <CreateNewFolder>true</CreateNewFolder>
-    <DefaultName>AutoCAD VB plug-in</DefaultName>
+    <DefaultName>AutoCAD CSharp plug-in</DefaultName>
     <ProvideDefaultName>true</ProvideDefaultName>
     <LocationField>Enabled</LocationField>
     <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
@@ -15,23 +17,17 @@
     <PreviewImage>__PreviewImage.ico</PreviewImage>
   </TemplateData>
   <TemplateContent>
-    <Project TargetFileName="AutoCAD VB plug-in.vbproj" File="AutoCAD VB plug-in.vbproj" ReplaceParameters="true">
-      <Folder Name="My Project" TargetFolderName="My Project">
-        <ProjectItem ReplaceParameters="true" TargetFileName="Application.myapp">Application.myapp</ProjectItem>
-        <ProjectItem ReplaceParameters="true" TargetFileName="Application.Designer.vb">Application.Designer.vb</ProjectItem>
-        <ProjectItem ReplaceParameters="true" TargetFileName="AssemblyInfo.vb">AssemblyInfo.vb</ProjectItem>
-        <ProjectItem ReplaceParameters="true" TargetFileName="Resources.resx">Resources.resx</ProjectItem>
-        <ProjectItem ReplaceParameters="true" TargetFileName="Resources.Designer.vb">Resources.Designer.vb</ProjectItem>
-        <ProjectItem ReplaceParameters="true" TargetFileName="Settings.settings">Settings.settings</ProjectItem>
-        <ProjectItem ReplaceParameters="true" TargetFileName="Settings.Designer.vb">Settings.Designer.vb</ProjectItem>
-      </Folder>
-      <ProjectItem ReplaceParameters="true" TargetFileName="myCommands.vb">myCommands.vb</ProjectItem>
+    <Project TargetFileName="AutoCAD CSharp plug-in.csproj" File="AutoCAD CSharp plug-in.csproj" ReplaceParameters="true">
+      <ProjectItem ReplaceParameters="true" TargetFileName="myCommands.cs">myCommands.cs</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="myCommands.resx">myCommands.resx</ProjectItem>
-      <ProjectItem ReplaceParameters="true" TargetFileName="myCommands.Designer.vb">myCommands.Designer.vb</ProjectItem>
-      <ProjectItem ReplaceParameters="true" TargetFileName="myPlugin.vb">myPlugin.vb</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="myCommands.Designer.cs">myCommands.Designer.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="myPlugin.cs">myPlugin.cs</ProjectItem>
+      <Folder Name="Properties" TargetFolderName="Properties">
+        <ProjectItem ReplaceParameters="true" TargetFileName="AssemblyInfo.cs">AssemblyInfo.cs</ProjectItem>
+      </Folder>
     </Project>
   </TemplateContent>
-  <WizardExtension>
+    <WizardExtension>
     <Assembly>ObjectARXLocatorWizard, Version=10.0.8.0, Culture=Neutral, PublicKeyToken=b838a7f5e9fe6c48</Assembly>
     <FullClassName>ObjectARXLocatorWizard.Wizard</FullClassName>
   </WizardExtension>

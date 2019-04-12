@@ -172,13 +172,14 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <PropertyGroup>
-    <PostBuildEvent>mkdir "$(SolutionDir)Output" 2&gt;nul
+    <PostBuildEvent>
+mkdir "$(SolutionDir)Output" 2&gt;nul
 mkdir "$(SolutionDir)Output\$(ProjectName)" 2&gt;nul
 mkdir "$(SolutionDir)Output\$(ProjectName)\My Project" 2&gt;nul
 cd "$(SolutionDir)Output\$(ProjectName)"
 if exist "$(SolutionDir)Output\$(ProjectName).zip" del "$(SolutionDir)Output\$(ProjectName).zip"
 del *.* /s /q &gt; nul
-copy /Y "$(ProjectDir)$(ProjectName) - 2015.vbproj" ".\$(ProjectName).vbproj"
+copy /Y "$(ProjectDir)$(ProjectName) - 2020.vbproj" ".\$(ProjectName).vbproj"
 copy /Y "$(ProjectDir)myPlugin.vb" .
 copy /Y "$(ProjectDir)myCommands.vb" .
 copy /Y "$(ProjectDir)myCommands.resx" .
@@ -186,9 +187,10 @@ copy /Y "$(ProjectDir)myCommands.Designer.vb" .
 copy /Y "$(ProjectDir)My Project\*.*" ".\My Project"
 copy /Y "$(ProjectDir)Template Data\__TemplateIcon.ico" . &gt; nul
 copy /Y "$(ProjectDir)Template Data\MyTemplate.vstemplate" . &gt; nul
-"C:\Utils\7z.exe" a -r "..\$(ProjectName).zip" *.*
+7z a -r "..\$(ProjectName).zip" *.*
 copy /Y "$(ProjectDir)Template Data\MyTemplate - WDExpress.vstemplate" "MyTemplate.vstemplate" &gt; nul
-"C:\Utils\7z.exe" a -r "..\$(ProjectName)-WD.zip" *.* &gt; nul</PostBuildEvent>
+7z a -r "..\$(ProjectName)-WD.zip" *.* &gt; nul
+</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
