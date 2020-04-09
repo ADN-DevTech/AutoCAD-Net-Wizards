@@ -181,7 +181,7 @@
             this.sdkpath.Name = "sdkpath";
             this.sdkpath.Size = new System.Drawing.Size(489, 25);
             this.sdkpath.TabIndex = 5;
-            this.sdkpath.TextChanged += new System.EventHandler(this.sdkpath_TextChanged);
+            this.sdkpath.TextChanged += new System.EventHandler(this.Sdkpath_TextChanged);
             
             // 
             // searchsdk
@@ -193,7 +193,7 @@
             this.searchsdk.TabIndex = 6;
             this.searchsdk.Text = "...";
             this.searchsdk.UseVisualStyleBackColor = true;
-            this.searchsdk.Click += new System.EventHandler(this.searchsdk_Click);
+            this.searchsdk.Click += new System.EventHandler(this.Searchsdk_Click);
             // 
             // aboutbox
             // 
@@ -205,7 +205,7 @@
             this.aboutbox.TabIndex = 3;
             this.aboutbox.Text = "About...";
             this.aboutbox.UseVisualStyleBackColor = true;
-            this.aboutbox.Click += new System.EventHandler(this.aboutbox_Click);
+            this.aboutbox.Click += new System.EventHandler(this.Aboutbox_Click);
             // 
             // searchacad
             // 
@@ -216,7 +216,7 @@
             this.searchacad.TabIndex = 20;
             this.searchacad.Text = "...";
             this.searchacad.UseVisualStyleBackColor = true;
-            this.searchacad.Click += new System.EventHandler(this.searchacad_Click);
+            this.searchacad.Click += new System.EventHandler(this.Searchacad_Click);
             // 
             // acadpath
             // 
@@ -225,7 +225,7 @@
             this.acadpath.Name = "acadpath";
             this.acadpath.Size = new System.Drawing.Size(489, 25);
             this.acadpath.TabIndex = 19;
-            this.acadpath.TextChanged += new System.EventHandler(this.acadpath_TextChanged);
+            this.acadpath.TextChanged += new System.EventHandler(this.Acadpath_TextChanged);
             // 
             // label3
             // 
@@ -1303,7 +1303,7 @@
             this.cbRunAs.Name = "cbRunAs";
             this.cbRunAs.Size = new System.Drawing.Size(75, 23);
             this.cbRunAs.TabIndex = 28;
-            this.cbRunAs.SelectedIndexChanged += new System.EventHandler(this.cbRunAs_SelectedIndexChanged);
+            this.cbRunAs.SelectedIndexChanged += new System.EventHandler(this.CbRunAs_SelectedIndexChanged);
             // 
             // ObjectARXLocatorForm
             // 

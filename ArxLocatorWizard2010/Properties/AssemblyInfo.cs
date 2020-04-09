@@ -30,7 +30,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("AutoCAD .Net Wizards")]
 [assembly: AssemblyDescription("by Cyrille Fauvel - Autodesk Developer Network")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Autodesk, Inc.")]
+[assembly: AssemblyCompany("Autodesk")]
 [assembly: AssemblyProduct("AutoCAD .Net Wizards")]
 [assembly: AssemblyCopyright("Copyright © Autodesk, Inc. All rights reserved.")]
 [assembly: AssemblyTrademark("")]

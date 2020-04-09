@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Include xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <?define NetFx48MinRelease = 528040 ?>
 
   <Property Id="DefaultUIFont" Value="VsdDefaultUIFont.524F4245_5254_5341_4C45_534153783400" />
   <!-- UI default font -->
@@ -9,28 +10,27 @@
   <Property Id="ConfirmInstallForm_PrevArgs" Value="WelcomeForm" />
   <Property Id="MaintenanceForm_Action" Value="Repair" />
   <CustomAction Id="CA_TARGETDIR" Property="TARGETDIR" Value="[ProgramFilesFolder][Manufacturer]\[ProductName]" Execute="firstSequence" />
-  <!--Madhukar: Until Support for >NET Framework 4.7 from Wix extension comes-->
-  <Property Id="NETFW47">
-    <RegistrySearch Id="__FindIfNET47Installed"
-      Root="HKLM" Key="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full" Name="Release" Type="raw">
-    </RegistrySearch>
-  </Property>
   <Property Id="ACAD">
     <RegistrySearch Id="__427D247C67494BD09B6055D05EEB4F8D"
-				Root="HKLM" Key="SOFTWARE\Autodesk\AutoCAD\R23.0\ACAD-2001\Install" Name="INSTALLDIR" Type="directory" />
+				Root="HKLM" Key="SOFTWARE\Autodesk\AutoCAD\R24.0\ACAD-4101\Install" Name="INSTALLDIR" Type="directory" />
   </Property>
   
-  <Property Id="VS2017_PRO">
-    <DirectorySearch Id="FindTemplatesDirectory" Path="[%USERPROFILE]\Documents\Visual Studio 2017\Templates\ProjectTemplates"/>
+  <Property Id="VS2019_PRO">
+    <DirectorySearch Id="FindTemplatesDirectory" Path="[%USERPROFILE]\Documents\Visual Studio 2019\Templates\ProjectTemplates"/>
   </Property>
-  <Property Id="VS2017_PRO_VC">
-    <RegistrySearch Id="__3B0508C781E6463D8EE1C89DD2719B30"
-			Root="HKLM" Key="SOFTWARE\WOW6432Node\Microsoft\VisualStudio\SxS\VS7" Name="15.0" Type="directory" />
-  </Property>
+  <!--VS 2019-->
+  <PropertyRef Id="VS2019_ROOT_FOLDER"/>
+
+  <PropertyRef Id="WIXNETFX4RELEASEINSTALLED" />
+  <Property Id="WIX_IS_NETFRAMEWORK_48_OR_LATER_INSTALLED" Secure="yes" />
+  <SetProperty Id="WIX_IS_NETFRAMEWORK_48_OR_LATER_INSTALLED" Value="1" After="AppSearch">
+    WIXNETFX4RELEASEINSTALLED >= "#$(var.NetFx48MinRelease)"
+  </SetProperty>
+    
 
   <!-- ARP support -->
   <Property Id="ARPCOMMENTS" Value="Autodesk Developer Network" />
-  <Property Id="ARPCONTACT" Value="by Cyrille Fauvel" />
+  <Property Id="ARPCONTACT" Value="Cyrille Fauvel, Madhukar Moogala" />
   <Property Id="ARPPRODUCTICON" Value="AutoCADNetWizards.ico" />
   <Property Id="ARPHELPLINK" Value="http://www.autodesk.com/developautocad" />
   <!-- Property Id="ARPREADME" Value="Your README link" / -->

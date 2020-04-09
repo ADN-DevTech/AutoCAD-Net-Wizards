@@ -1,13 +1,15 @@
 <VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
   <TemplateData>
-    <Name>AutoCAD 2020 VB plug-in</Name>
+    <Name>AutoCAD 2021 VB plug-in</Name>
     <Description>This is a basic AutoCAD Plugin in VB.net</Description>
     <ProjectType>VisualBasic</ProjectType>
-    <ProjectSubType></ProjectSubType>
+    <LanguageTag>Visual Basic</LanguageTag>
+    <PlatformTag>Windows</PlatformTag>
+    <ProjectTypeTag>Library</ProjectTypeTag>
+    <ProjectTypeTag>Desktop</ProjectTypeTag>
     <SortOrder>1000</SortOrder>
-	<RequiredFrameworkVersion>4.7</RequiredFrameworkVersion>
-	<!--<MaxFrameworkVersion>4.7.2</MaxFrameworkVersion>-->
-	<TemplateID>Autodesk.CSharp.AutoCAD191_plugin</TemplateID>
+	  <RequiredFrameworkVersion>4.5</RequiredFrameworkVersion>
+	  <TemplateID>Autodesk.VisualBasic.AutoCAD191_plugin</TemplateID>
     <CreateNewFolder>true</CreateNewFolder>
     <DefaultName>AutoCAD VB plug-in</DefaultName>
     <ProvideDefaultName>true</ProvideDefaultName>

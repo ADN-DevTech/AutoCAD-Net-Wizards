@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="current" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -179,7 +179,7 @@ mkdir "$(SolutionDir)Output\$(ProjectName)\My Project" 2&gt;nul
 cd "$(SolutionDir)Output\$(ProjectName)"
 if exist "$(SolutionDir)Output\$(ProjectName).zip" del "$(SolutionDir)Output\$(ProjectName).zip"
 del *.* /s /q &gt; nul
-copy /Y "$(ProjectDir)$(ProjectName) - 2020.vbproj" ".\$(ProjectName).vbproj"
+copy /Y "$(ProjectDir)$(ProjectName) - 2021.vbproj" ".\$(ProjectName).vbproj"
 copy /Y "$(ProjectDir)myPlugin.vb" .
 copy /Y "$(ProjectDir)myCommands.vb" .
 copy /Y "$(ProjectDir)myCommands.resx" .
@@ -188,8 +188,6 @@ copy /Y "$(ProjectDir)My Project\*.*" ".\My Project"
 copy /Y "$(ProjectDir)Template Data\__TemplateIcon.ico" . &gt; nul
 copy /Y "$(ProjectDir)Template Data\MyTemplate.vstemplate" . &gt; nul
 7z a -r "..\$(ProjectName).zip" *.*
-copy /Y "$(ProjectDir)Template Data\MyTemplate - WDExpress.vstemplate" "MyTemplate.vstemplate" &gt; nul
-7z a -r "..\$(ProjectName)-WD.zip" *.* &gt; nul
 </PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -97,7 +97,7 @@ mkdir "$(SolutionDir)Output\$(ProjectName)\Properties" 2&gt;nul
 cd "$(SolutionDir)Output\$(ProjectName)"
 if exist "$(SolutionDir)Output\$(ProjectName).zip" del "$(SolutionDir)Output\$(ProjectName).zip"
 del *.* /s /q &gt; nul
-copy /Y "$(ProjectDir)$(ProjectName) - 2020.csproj" ".\$(ProjectName).csproj" &gt; nul
+copy /Y "$(ProjectDir)$(ProjectName) - 2021.csproj" ".\$(ProjectName).csproj" &gt; nul
 copy /Y "$(ProjectDir)myPlugin.cs" . &gt; nul
 copy /Y "$(ProjectDir)myCommands.cs" . &gt; nul
 copy /Y "$(ProjectDir)myCommands.resx" . &gt; nul
@@ -106,8 +106,6 @@ copy /Y "$(ProjectDir)Properties\AssemblyInfo.cs" .\Properties &gt; nul
 copy /Y "$(ProjectDir)Template Data\__TemplateIcon.ico" . &gt; nul
 copy /Y "$(ProjectDir)Template Data\MyTemplate.vstemplate" . &gt; nul
 7z a -r "..\$(ProjectName).zip" *.* &gt; nul
-copy /Y "$(ProjectDir)Template Data\MyTemplate - WDExpress.vstemplate" "MyTemplate.vstemplate" &gt; nul
-7z a -r "..\$(ProjectName)-WD.zip" *.* &gt; nul
 </PostBuildEvent>
  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

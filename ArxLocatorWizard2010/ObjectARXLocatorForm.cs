@@ -50,7 +50,7 @@ namespace ObjectARXLocatorWizard
 		   
 		}
 
-		private void searchsdk_Click(object sender, EventArgs e)
+		private void Searchsdk_Click(object sender, EventArgs e)
 		{
 			if (this.folderBrowserDialog.ShowDialog() == DialogResult.OK)
 			{
@@ -66,7 +66,7 @@ namespace ObjectARXLocatorWizard
 			}
 		}
 
-		private void sdkpath_TextChanged(object sender, EventArgs e)
+		private void Sdkpath_TextChanged(object sender, EventArgs e)
 		{
 			bool exists = System.IO.File.Exists(this.sdkpath.Text.Trim() + "\\AcMgd.dll");
 			if (!exists)
@@ -87,7 +87,7 @@ namespace ObjectARXLocatorWizard
 			//    && System.IO.Directory.Exists(this.sdkpath.Text.Trim()));
 		}
 
-		private void searchacad_Click(object sender, EventArgs e)
+		private void Searchacad_Click(object sender, EventArgs e)
 		{
 			if (this.folderBrowserDialog.ShowDialog() == DialogResult.OK)
 			{
@@ -102,7 +102,7 @@ namespace ObjectARXLocatorWizard
 			}
 		}
 
-		private void acadpath_TextChanged(object sender, EventArgs e)
+		private void Acadpath_TextChanged(object sender, EventArgs e)
 		{
 			mConfig.SetValueAt(".//Autodesk/Wizards/ObjectARX/AcadLocation", this.acadpath.Text.Trim());
 			mConfig.Save();
@@ -119,26 +119,26 @@ namespace ObjectARXLocatorWizard
 			
 		}
 
-		private void aboutbox_Click(object sender, EventArgs e)
+		private void Aboutbox_Click(object sender, EventArgs e)
 		{
 			AboutBox dlg = new AboutBox();
 			dlg.ShowDialog();
 			dlg.Dispose();
 		}
 
-		private void interop0_CheckedChanged(object sender, EventArgs e)
+		private void Interop0_CheckedChanged(object sender, EventArgs e)
 		{
 			if (!interop0.Checked)
 				interop1.Checked = false;
 		}
 		
-		private void interop1_CheckedChanged(object sender, EventArgs e)
+		private void Interop1_CheckedChanged(object sender, EventArgs e)
 		{
 			if (interop1.Checked)
 				interop0.Checked = true;
 		}
 
-		private void folderBrowserDialog1_HelpRequest(object sender, EventArgs e)
+		private void FolderBrowserDialog1_HelpRequest(object sender, EventArgs e)
 		{
 
 		}
@@ -378,7 +378,7 @@ namespace ObjectARXLocatorWizard
 		}
 		#endregion
 
-		private void cbRunAs_SelectedIndexChanged(object sender, EventArgs e)
+		private void CbRunAs_SelectedIndexChanged(object sender, EventArgs e)
 		{
 			ProductChanged();
 		}

@@ -123,6 +123,9 @@ namespace ObjectARXLocatorWizard
         /// <param name="customParams">The custom parameters with which to perform parameter replacement in the project.</param>
         void IWizard.RunStarted(object automationObject, Dictionary<string, string> replacementsDictionary, WizardRunKind runKind, object[] customParams)
         {
+            #if DEBUG 
+            System.Diagnostics.Debugger.Launch(); 
+            #endif
             System.Reflection.Assembly ass = System.Reflection.Assembly.GetExecutingAssembly(); // GetEntryAssembly()
             AddInCompany =((AssemblyCompanyAttribute)Attribute.GetCustomAttribute (ass, typeof(AssemblyCompanyAttribute), false)).Company ;
             AssemblyTitleAttribute titleAttr = ass.GetCustomAttributes(typeof(System.Reflection.AssemblyTitleAttribute), false)[0] as AssemblyTitleAttribute;
@@ -639,24 +642,21 @@ namespace ObjectARXLocatorWizard
             string acadpath;
             try
             {
+
                 RegistryKey ukey = Registry.CurrentUser;
                 RegistryKey acad = ukey.OpenSubKey("SOFTWARE\\Autodesk\\AutoCAD");
                 string curver = acad.GetValue("CurVer") as string;
                 RegistryKey version = ukey.OpenSubKey("SOFTWARE\\Autodesk\\AutoCAD\\" + curver);
                 string key = version.GetValue("CurVer") as string;
-                //- We cannot read HKEY_LOCAL_MACHINE on Vista
-                //RegistryKey lkey = Registry.LocalMachine;
-                //RegistryKey acad2 = lkey.OpenSubKey("SOFTWARE\\Autodesk\\AutoCAD\\" + curver + "\\" + key);
-                //string acadpath = acad2.GetValue("AcadLocation") as string;
                 RegistryKey acad2 = ukey.OpenSubKey("SOFTWARE\\Autodesk\\AutoCAD\\" + curver + "\\" + key);
-                acadpath = acad2.GetValue("NFWFile") as string;
-                int pos = acadpath.IndexOf("\\Help");
+                acadpath = acad2.GetValue("SupportFolder") as string;
+                int pos = acadpath.IndexOf("\\Support");
                 acadpath = acadpath.Substring(0, pos);
             }
             catch
             {
-                //*If AutoCAD 2017 is not found, we will default to ACAD 2017*//
-                acadpath = "C:\\Program Files\\Autodesk\\AutoCAD 2017";
+                //*If AutoCAD is not found we will return default location*//
+                acadpath = "C:\\Program Files\\Autodesk\\AutoCAD 2021";
             }
             return (acadpath);
         }
@@ -734,12 +734,5 @@ namespace ObjectARXLocatorWizard
 
     }
 
-    //public class Start
-    //{
-    //   public static void Main()
-    //   {
-    //       ObjectARXLocatorForm form = new ObjectARXLocatorForm();
-    //       form.Show();
-    //   }
-    //}
+
 }

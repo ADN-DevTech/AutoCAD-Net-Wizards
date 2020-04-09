@@ -100,20 +100,14 @@ namespace XmlConfigurator {
 
         private string BuildName(bool bAllUsers, bool bMustExits)
         {
-            if (bAllUsers == false)
+
+            if(bAllUsers == false)
             {
-                Microsoft.Win32.RegistryKey keycu = Microsoft.Win32.Registry.CurrentUser.OpenSubKey(
-                    "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Shell Folders"
-                );
-                string fileName = string.Format("{0}\\{1}\\{2}\\{3}.xml", keycu.GetValue("AppData"), mCompany, mAppName, mBaseName);
+                string fileName = string.Format("{0}\\{1}\\{2}\\{3}.xml", Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), mCompany, mAppName, mBaseName);
                 if (System.IO.File.Exists(fileName) == true || bMustExits == false)
                     return (fileName);
             }
-
-            Microsoft.Win32.RegistryKey keylm = Microsoft.Win32.Registry.LocalMachine.OpenSubKey(
-                "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Shell Folders"
-            );
-            string fileNameAll = string.Format("{0}\\{1}\\{2}\\{3}.xml", keylm.GetValue("Common AppData"), mCompany, mAppName, mBaseName);
+            string fileNameAll = string.Format("{0}\\{1}\\{2}\\{3}.xml", Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData), mCompany, mAppName, mBaseName);
             if (System.IO.File.Exists(fileNameAll) == true || bMustExits == false)
                 return (fileNameAll);
 

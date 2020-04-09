@@ -1,16 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi" xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">
 
 	<?define RTMProductVersion = "18.0.0"?> <!-- The first one - do not edit -->
-	<?define ProductVersion = "20.0.0"?>
-	<?define UpgradeCode = "{6894135C-6FF7-48CD-B4B1-4C084B67FE7C}"?>
+	<?define ProductVersion = "24.0.0"?>
+	<?define UpgradeCode = "{B1ECA4AC-8256-4C1A-9F70-E8C751FD2099}"?>
 	
 	<Product 
 		Id="*" 
 		Codepage="1252" 
 		Language="1033" 
 		Manufacturer="Autodesk" 
-		Name="AutoCAD 2020 .NET Wizards" 
+		Name="AutoCAD 2021 .NET Wizards" 
 		UpgradeCode="$(var.UpgradeCode)" 
 		Version="$(var.ProductVersion)"
 	>
@@ -21,7 +21,7 @@
 		InstallPrivileges="elevated" 			
 		InstallerVersion="300" 
 		Languages="1033" 
-		Manufacturer="by Cyrille Fauvel,Madhukar Moogala" 
+		Manufacturer="by Cyrille Fauvel, Madhukar Moogala" 
 		Platform="x86"
 	/>
 
@@ -32,18 +32,13 @@
 	<?include feature.wxi ?>
 	<?include property.wxi ?>
 	<?include UI.wxi ?>
-  <?define NetFx47MinRelease = 460798 ?>
 
-<!--Until support comes from the extension
-i.e. <PropertyRef Id="WIX_IS_NETFRAMEWORK_47_OR_LATER_INSTALLED" />-->
-
-    <Condition Message="[ProductName] Requires .NET Framework 4.7 or later to be installed">
-      <!--<![CDATA[NETFW47="#460798" OR NETFW47="#460805" OR NETFW47="#461308" OR NETFW47="#461310"]]>-->
-      <![CDATA[NETFW47 >="#$(var.NetFx47MinRelease)"]]>
-    </Condition>
+  <Condition Message="[ProductName] Requires .NET Framework 4.8 or later to be installed">
+    <![CDATA[Installed OR WIX_IS_NETFRAMEWORK_48_OR_LATER_INSTALLED]]>
+  </Condition>
     
-	<Condition Message="Microsoft Visual Studio Pro/Premium/Ultimate 2017 or Visual Community Edition 2017 must be present on the target machine.">
-    <![CDATA[VS2017_PRO_VC]]>
+	<Condition Message="Microsoft Visual Studio Pro/Premium/Ultimate 2019 or Visual Community Edition 2019 must be present on the target machine.">
+    <![CDATA[VS2019_ROOT_FOLDER]]>
 	</Condition>
 
 	<InstallUISequence> <!-- msiexec /i -->
