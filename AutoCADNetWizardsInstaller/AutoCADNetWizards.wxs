@@ -2,15 +2,16 @@
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi" xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">
 
 	<?define RTMProductVersion = "18.0.0"?> <!-- The first one - do not edit -->
-	<?define ProductVersion = "24.0.0"?>
-	<?define UpgradeCode = "{B1ECA4AC-8256-4C1A-9F70-E8C751FD2099}"?>
+	<?define ProductVersion = "24.1.0"?>
+	<!--?define UpgradeCode = "{B1ECA4AC-8256-4C1A-9F70-E8C751FD2099}"?-->
+	<?define UpgradeCode = "{D160AB65-1981-415C-B806-5D1F6CA0C5FF}"?>
 	
 	<Product 
 		Id="*" 
 		Codepage="1252" 
 		Language="1033" 
 		Manufacturer="Autodesk" 
-		Name="AutoCAD 2021 .NET Wizards" 
+		Name="AutoCAD 2022 .NET Wizards" 
 		UpgradeCode="$(var.UpgradeCode)" 
 		Version="$(var.ProductVersion)"
 	>

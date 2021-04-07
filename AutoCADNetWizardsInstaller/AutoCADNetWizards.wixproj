@@ -44,8 +44,8 @@
     <Error Text="The WiX Toolset v3.11 (or newer) build tools must be installed to build this project. To download the WiX Toolset, see http://wixtoolset.org/releases/" />
   </Target>
   <PropertyGroup>
-    <PostBuildEvent>del /F $(SolutionDir)AutoCAD_2021_dotnet_wizards.zip
-7z a -tzip  $(SolutionDir)AutoCAD_2021_dotnet_wizards.zip $(TargetDir)$(SolutionName).msi</PostBuildEvent>
+    <PostBuildEvent>del /F $(SolutionDir)AutoCAD_2022_dotnet_wizards.zip
+7z a -tzip  $(SolutionDir)AutoCAD_2022_dotnet_wizards.zip $(TargetDir)$(SolutionName).msi</PostBuildEvent>
   </PropertyGroup>
   <!--
 	To modify your build process, add your task inside one of the targets below and uncomment it.
