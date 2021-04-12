@@ -11,8 +11,8 @@
   <Property Id="MaintenanceForm_Action" Value="Repair" />
   <CustomAction Id="CA_TARGETDIR" Property="TARGETDIR" Value="[ProgramFilesFolder][Manufacturer]\[ProductName]" Execute="firstSequence" />
   <Property Id="ACAD">
-    <RegistrySearch Id="__427D247C67494BD09B6055D05EEB4F8D"
-				Root="HKLM" Key="SOFTWARE\Autodesk\AutoCAD\R24.0\ACAD-4101\Install" Name="INSTALLDIR" Type="directory" />
+    <RegistrySearch Id="AutoCAD_2022_Installation_Path"
+				Root="HKLM" Key="SOFTWARE\Autodesk\AutoCAD\R24.1\ACAD-5101\Install" Name="INSTALLDIR" Type="directory" />
   </Property>
   
   <Property Id="VS2019_PRO">

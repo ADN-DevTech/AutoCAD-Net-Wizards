@@ -6,5 +6,6 @@
 	 - for example in AutoCAD VB Plugin project ,  `"C:\Utils\7z.exe" a -r "..\$(ProjectName).zip" *.* `
  -  Set the path in terminal using: set path=C:\Utils
 - Open the Visual Solution `"..\AutoCADNetWizardsInstaller\AutoCADNetWizards.sln"` in Visual Studio 2019
-- Build Solution
+- Build Solution in Release to get the usable AutoCADNetWizards.msi
+- Build Solution in Debug for troubleshooting purpose
 	 
