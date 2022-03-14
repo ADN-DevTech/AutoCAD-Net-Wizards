@@ -152,7 +152,10 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Settings.settings" />
+    <None Include="Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings1.Designer.vb</LastGenOutput>
+    </None>
     <None Include="Template Data\MyTemplate.vstemplate">
       <SubType>Designer</SubType>
     </None>
@@ -162,6 +165,11 @@
     <None Include="My Project\MyApplication.myapp" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Settings1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
     <None Include="Application.Designer.vb" />
     <None Include="AssemblyInfo.vb" />
     <None Include="Resources.Designer.vb" />
