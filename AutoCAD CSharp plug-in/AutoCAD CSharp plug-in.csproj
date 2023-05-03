@@ -12,11 +12,20 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>AutoCAD_CSharp_plug_in</RootNamespace>
     <AssemblyName>AutoCAD CSharp plug-in</AssemblyName>
-    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
+      <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
     <OldToolsVersion>3.5</OldToolsVersion>
     <UpgradeBackupLocation />
     <PublishUrl>publish\</PublishUrl>
@@ -90,29 +99,30 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>
-mkdir "$(SolutionDir)Output" 2&gt;nul
-mkdir "$(SolutionDir)Output\$(ProjectName)" 2&gt;nul
-mkdir "$(SolutionDir)Output\$(ProjectName)\Properties" 2&gt;nul
-cd "$(SolutionDir)Output\$(ProjectName)"
-if exist "$(SolutionDir)Output\$(ProjectName).zip" del "$(SolutionDir)Output\$(ProjectName).zip"
-del *.* /s /q &gt; nul
-copy /Y "$(ProjectDir)$(ProjectName) - 2021.csproj" ".\$(ProjectName).csproj" &gt; nul
-copy /Y "$(ProjectDir)myPlugin.cs" . &gt; nul
-copy /Y "$(ProjectDir)myCommands.cs" . &gt; nul
-copy /Y "$(ProjectDir)myCommands.resx" . &gt; nul
-copy /Y "$(ProjectDir)myCommands.Designer.cs" . &gt; nul
-copy /Y "$(ProjectDir)Properties\AssemblyInfo.cs" .\Properties &gt; nul
-copy /Y "$(ProjectDir)Template Data\__TemplateIcon.ico" . &gt; nul
-copy /Y "$(ProjectDir)Template Data\MyTemplate.vstemplate" . &gt; nul
-7z a -r "..\$(ProjectName).zip" *.* &gt; nul
-</PostBuildEvent>
- </PropertyGroup>
+    <PostBuildEvent></PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
   </Target>
-  <Target Name="AfterBuild">
-  </Target>
   -->
+    <PropertyGroup>
+        <OutputDirectory>..\AutoCADNetWizardsInstaller\Output\</OutputDirectory>
+    </PropertyGroup>
+    <Target Name="AfterBuild">
+        <Message Text="Making the zip archive of plugin template"></Message>
+        <MakeDir Directories="$(OutputDirectory)" Condition="!Exists('$(OutputDirectory)')"></MakeDir>
+        <MakeDir Directories="$(OutputDirectory)$(ProjectName)" Condition="!Exists('$(OutputDirectory)$(ProjectName)')"></MakeDir>
+        <MakeDir Directories="$(OutputDirectory)$(ProjectName)\Properties" Condition="!Exists('$(OutputDirectory)$(ProjectName)\Properties')"></MakeDir>        
+        <Copy SourceFiles="$(ProjectDir)$(ProjectName) - 2021.csproj" DestinationFiles="$(OutputDirectory)$(ProjectName)\$(ProjectName).csproj"></Copy>
+        <Copy SourceFiles="$(ProjectDir)myPlugin.cs" DestinationFiles="$(OutputDirectory)$(ProjectName)\myPlugin.cs"></Copy>
+        <Copy SourceFiles="$(ProjectDir)myCommands.cs" DestinationFiles="$(OutputDirectory)$(ProjectName)\myCommands.cs"></Copy>
+        <Copy SourceFiles="$(ProjectDir)myCommands.resx" DestinationFiles="$(OutputDirectory)$(ProjectName)\myCommands.resx"></Copy>
+        <Copy SourceFiles="$(ProjectDir)myCommands.Designer.cs" DestinationFiles="$(OutputDirectory)$(ProjectName)\myCommands.Designer.cs"></Copy>
+        <Copy SourceFiles="$(ProjectDir)Properties\AssemblyInfo.cs" DestinationFiles="$(OutputDirectory)$(ProjectName)\Properties\AssemblyInfo.cs"></Copy>
+        <Copy SourceFiles="$(ProjectDir)Template Data\__TemplateIcon.ico" DestinationFiles="$(OutputDirectory)$(ProjectName)\__TemplateIcon.ico"></Copy>
+        <Copy SourceFiles="$(ProjectDir)Template Data\MyTemplate.vstemplate" DestinationFiles="$(OutputDirectory)$(ProjectName)\MyTemplate.vstemplate"></Copy>
+        <Delete Files="$(OutputDirectory)$(ProjectName).zip" Condition="Exists('$(OutputDirectory)$(ProjectName).zip')" ></Delete>
+        <ZipDirectory SourceDirectory="$(OutputDirectory)$(ProjectName)" DestinationFile="$(OutputDirectory)$(ProjectName).zip"></ZipDirectory>
+    </Target>
 </Project>

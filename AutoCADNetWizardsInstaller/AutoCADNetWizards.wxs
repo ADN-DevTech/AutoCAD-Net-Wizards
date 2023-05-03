@@ -2,16 +2,18 @@
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi" xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">
 
 	<?define RTMProductVersion = "18.0.0"?> <!-- The first one - do not edit -->
-	<?define ProductVersion = "24.1.0"?>
+	<?define ProductVersion = "24.3.0"?>
 	<!--?define UpgradeCode = "{B1ECA4AC-8256-4C1A-9F70-E8C751FD2099}"?-->
-	<?define UpgradeCode = "{D160AB65-1981-415C-B806-5D1F6CA0C5FF}"?>
+    <!--?define UpgradeCode = "{D160AB65-1981-415C-B806-5D1F6CA0C5FF}"?-->
+    <!--For AutoCAD2024-->
+    <?define UpgradeCode ="{DF4457BF-BF31-42C0-8A3E-8C8E009ED6C9}"?>
 	
 	<Product 
 		Id="*" 
 		Codepage="1252" 
 		Language="1033" 
 		Manufacturer="Autodesk" 
-		Name="AutoCAD 2023 .NET Wizards" 
+		Name="AutoCAD 2024 .NET Wizards" 
 		UpgradeCode="$(var.UpgradeCode)" 
 		Version="$(var.ProductVersion)"
 	>
@@ -38,8 +40,8 @@
     <![CDATA[Installed OR WIX_IS_NETFRAMEWORK_48_OR_LATER_INSTALLED]]>
   </Condition>
     
-	<Condition Message="Microsoft Visual Studio Pro/Premium/Ultimate 2019 or Visual Community Edition 2019 must be present on the target machine.">
-    <![CDATA[VS2019_ROOT_FOLDER]]>
+	<Condition Message="Microsoft Visual Studio Pro/Premium/Ultimate 2022 or Visual Community Edition 2022 must be present on the target machine.">
+    <![CDATA[VS2022_ROOT_FOLDER]]>
 	</Condition>
 
 	<InstallUISequence> <!-- msiexec /i -->

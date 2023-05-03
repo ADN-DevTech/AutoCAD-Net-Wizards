@@ -656,7 +656,7 @@ namespace ObjectARXLocatorWizard
             catch
             {
                 //*If AutoCAD is not found we will return default location*//
-                acadpath = "C:\\Program Files\\Autodesk\\AutoCAD 2022";
+                acadpath = "C:\\Program Files\\Autodesk\\AutoCAD 2024";
             }
             return (acadpath);
         }

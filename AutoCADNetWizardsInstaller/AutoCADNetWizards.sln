@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30002.166
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "AutoCADNetWizards", "AutoCADNetWizards.wixproj", "{8C2017A2-223D-4EE1-BB86-62B13742521A}"
 	ProjectSection(ProjectDependencies) = postProject
