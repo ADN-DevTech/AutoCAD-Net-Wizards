@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "ExamplePlugin": {
+      "commandName": "Project"
+    },
+    "Acad": {
+      "commandName": "Executable",
+      "executablePath": "D:\\ACAD\\venn\\AutoCAD 2025\\acad.exe"
+    }
+  }
+}
