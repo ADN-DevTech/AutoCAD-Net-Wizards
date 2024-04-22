@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExamplePlugin", "AutoCAD2025-CSharp\ExamplePlugin.csproj", "{0DD752F0-2A66-499A-ABA2-3DAC36A17DB9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExamplePlugin", "ExamplePlugin\ExamplePlugin.csproj", "{0DD752F0-2A66-499A-ABA2-3DAC36A17DB9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PluginVsix", "PluginVsix\PluginVsix.csproj", "{58B2EBCB-97A7-42B4-9168-88C51B574896}"
 EndProject
