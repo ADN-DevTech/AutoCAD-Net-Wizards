@@ -158,6 +158,7 @@ vsixinstaller /u:AutoCAD2025_07DA9910-9E94-471B-BD32-565D05D4D857
 ```
 
 - Through UI
+![Uninstall-VSIX](https://github.com/ADN-DevTech/AutoCAD-Net-Wizards/assets/6602398/6762e962-062d-4209-aa31-3f8b07140a9a)
 
 
 
