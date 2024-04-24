@@ -1,6 +1,10 @@
 # AutoCAD .NET Wizards
 
-A modern version of wizards supporting .NET core projects, this uses VSIX technology to install VS Template on Visual Studio.
+- Modern wizards for .NET Core projects
+
+- This tool uses VSIX technology to install a VS Template on Visual Studio.
+
+- All command-line instructions should run on the[ Visual Studio Developer Command Prompt.]([Command-line shells & prompt for developers - Visual Studio (Windows) | Microsoft Learn](https://learn.microsoft.com/en-us/visualstudio/ide/reference/command-prompt-powershell?view=vs-2022))
 
 ## Steps To Build
 
@@ -42,14 +46,9 @@ msbuild PluginVsix\PluginVsix.csproj /t:build /p:Configuration=Release;Platform=
   - **To add the ObjectARX SDK or Civil SDK from a local file disk, edit the project file (.csproj).**
     - Add `<AssemblySearchPaths>D:\Arx2025\inc\;$(AssemblySearchPaths)</AssemblySearchPaths>`.
 
- 
-
 - Select the project from solution explorer and right click.
   
- ![EdiProjectFile](https://github.com/ADN-DevTech/AutoCAD-Net-Wizards/assets/6602398/77fc0b17-f914-4d36-8f53-a6b788bab670)
-
-  
-  
+  ![EdiProjectFile](https://github.com/ADN-DevTech/AutoCAD-Net-Wizards/assets/6602398/77fc0b17-f914-4d36-8f53-a6b788bab670)
 
 - A typical .NET plugin project to accomodate AutoCAD, ACA, C3D etc.
 
@@ -64,13 +63,13 @@ msbuild PluginVsix\PluginVsix.csproj /t:build /p:Configuration=Release;Platform=
   </PropertyGroup>
   <PropertyGroup>
      <!--Edit ArxSdk to local ObjectARX Path-->
-	<ArxSdk>D:\ArxSDKs\arx2025</ArxSdk>
+    <ArxSdk>D:\ArxSDKs\arx2025</ArxSdk>
      <!--Edit AcadDir to AutoCAD 2025 Install path-->
     <AcadDir>D:\ACAD\venn\AutoCAD 2025</AcadDir>
     <ArxMgdPath>$(AcadDir)</ArxMgdPath>
     <OMFMgdPath>$(AcadDir)\ACA\</OMFMgdPath>
     <AeccMgdPath>$(AcadDir)\C3D\</AeccMgdPath>
-	<AssemblySearchPaths>$(ArxSdk)\inc\;$(OMFMgdPath);$(AeccMgdPath);$(AssemblySearchPaths)</AssemblySearchPaths>
+    <AssemblySearchPaths>$(ArxSdk)\inc\;$(OMFMgdPath);$(AeccMgdPath);$(AssemblySearchPaths)</AssemblySearchPaths>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <OutputPath>bin\x64\Debug\</OutputPath>
@@ -119,7 +118,7 @@ msbuild PluginVsix\PluginVsix.csproj /t:build /p:Configuration=Release;Platform=
       <Private>False</Private>
     </Reference>
     <!--Add any other references here -->  
-      
+
   </ItemGroup>
 </Project>
 ```
@@ -150,8 +149,18 @@ msbuild PluginVsix\PluginVsix.csproj /t:build /p:Configuration=Release;Platform=
 }
 ```
 
+### Uninstall Plugin VSIX
+
+- Through CLI
+
+```bash
+vsixinstaller /u:AutoCAD2025_07DA9910-9E94-471B-BD32-565D05D4D857
+```
+
+- Through UI
+
+
+
 ### Written By
 
 - Madhukar Moogala , Autodesk Platform Services (@galakar)
-
-
