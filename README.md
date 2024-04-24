@@ -46,7 +46,8 @@ msbuild PluginVsix\PluginVsix.csproj /t:build /p:Configuration=Release;Platform=
 
 - Select the project from solution explorer and right click.
   
-  ![](C:\Users\moogalm\AppData\Roaming\marktext\images\2024-04-24-10-02-17-image.png)
+ ![EdiProjectFile](https://github.com/ADN-DevTech/AutoCAD-Net-Wizards/assets/6602398/77fc0b17-f914-4d36-8f53-a6b788bab670)
+
   
   
 
