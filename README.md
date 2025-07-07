@@ -27,15 +27,15 @@ msbuild PluginVsix\PluginVsix.csproj /t:build /p:Configuration=Release;Platform=
 
 ## Steps To Install
 
-- Download and unpack https://github.com/ADN-DevTech/AutoCAD-Net-Wizards/releases/download/v2025/PluginVsix.zip
+- Download and unpack https://github.com/ADN-DevTech/AutoCAD-Net-Wizards/releases/download/v2026.0.0/PluginVsix.zip
 
 - Double Click PluginVsix.vsix
   
-  ![VsixInstall-1](https://github.com/ADN-DevTech/AutoCAD-Net-Wizards/assets/6602398/3c40eeed-ab2e-4e3b-afa4-17a4e7ae1211)
+  ![VsixInstall-1](https://github.com/ADN-DevTech/AutoCAD-Net-Wizards/blob/ForAutoCAD2026/Start_Installing.png)
   
-  ![VsixInstall-2](https://github.com/ADN-DevTech/AutoCAD-Net-Wizards/assets/6602398/94618cfd-40a1-4580-9b90-3971ee4702c2)
+  ![VsixInstall-2](https://github.com/ADN-DevTech/AutoCAD-Net-Wizards/blob/ForAutoCAD2026/Finished_Installing.png)
   
-  ![AutoCAD-Wizard](https://github.com/ADN-DevTech/AutoCAD-Net-Wizards/assets/6602398/dc1a3cee-4519-4d05-8d0f-9561c19b166e)  
+  ![AutoCAD-Wizard](https://github.com/ADN-DevTech/AutoCAD-Net-Wizards/blob/ForAutoCAD2026/WizTemplatesinVS2022.png)  
 
 ### Tips
 
@@ -44,7 +44,7 @@ msbuild PluginVsix\PluginVsix.csproj /t:build /p:Configuration=Release;Platform=
   - **Wizard template fetches** the AutoCAD NuGet package from the Microsoft NuGet Server.
   - **The template project will resolve to the local NuGet package** if it already exists at `%USERPROFILE%\.nuget`.
   - **To add the ObjectARX SDK or Civil SDK from a local file disk, edit the project file (.csproj).**
-    - Add `<AssemblySearchPaths>D:\Arx2025\inc\;$(AssemblySearchPaths)</AssemblySearchPaths>`.
+    - Add `<AssemblySearchPaths>D:\Arx2026\inc\;$(AssemblySearchPaths)</AssemblySearchPaths>`.
 
 - Select the project from solution explorer and right click.
   
@@ -63,9 +63,9 @@ msbuild PluginVsix\PluginVsix.csproj /t:build /p:Configuration=Release;Platform=
   </PropertyGroup>
   <PropertyGroup>
      <!--Edit ArxSdk to local ObjectARX Path-->
-    <ArxSdk>D:\ArxSDKs\arx2025</ArxSdk>
-     <!--Edit AcadDir to AutoCAD 2025 Install path-->
-    <AcadDir>D:\ACAD\venn\AutoCAD 2025</AcadDir>
+    <ArxSdk>D:\ArxSDKs\arx2026</ArxSdk>
+     <!--Edit AcadDir to AutoCAD 2026 Install path-->
+    <AcadDir>C:\Program Files\Autodesk\AutoCAD 2026\acad.exe</AcadDir>
     <ArxMgdPath>$(AcadDir)</ArxMgdPath>
     <OMFMgdPath>$(AcadDir)\ACA\</OMFMgdPath>
     <AeccMgdPath>$(AcadDir)\C3D\</AeccMgdPath>
@@ -151,17 +151,18 @@ msbuild PluginVsix\PluginVsix.csproj /t:build /p:Configuration=Release;Platform=
 
 ### Uninstall Plugin VSIX
 
-- Through CLI
+- Through CLI 
 
 ```bash
-vsixinstaller /u:AutoCAD2025_07DA9910-9E94-471B-BD32-565D05D4D857
+vsixinstaller /u:PluginVsix
 ```
-
+PluginVsix is the <AssemblyName> of the PluginVsix project
 - Through UI
-![Uninstall-VSIX](https://github.com/ADN-DevTech/AutoCAD-Net-Wizards/assets/6602398/6762e962-062d-4209-aa31-3f8b07140a9a)
+![Uninstall-VSIX](https://github.com/ADN-DevTech/AutoCAD-Net-Wizards/blob/ForAutoCAD2026/UninstallVsix.png)
 
 
 
 ### Written By
 
 - Madhukar Moogala , Autodesk Platform Services (@galakar)
+- Updated by Sreeparna Mandal, Autodesk Platform Services, for AutoCAD 2026 changes.
