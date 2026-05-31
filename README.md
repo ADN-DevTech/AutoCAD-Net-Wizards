@@ -27,7 +27,7 @@ msbuild PluginVsix\PluginVsix.csproj /t:build /p:Configuration=Release;Platform=
 
 ## Steps To Install
 
-- Download and unpack https://github.com/ADN-DevTech/AutoCAD-Net-Wizards/releases/download/v2025/PluginVsix.zip
+- Download and unpack https://github.com/ADN-DevTech/AutoCAD-Net-Wizards/releases/download/v2027/PluginVsix.zip
 
 - Double Click PluginVsix.vsix 
   
