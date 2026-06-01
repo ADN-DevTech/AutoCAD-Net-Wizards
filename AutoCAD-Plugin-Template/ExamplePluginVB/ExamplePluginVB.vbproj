@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <RootNamespace>ExamplePluginVB</RootNamespace>
-    <TargetFramework>net8.0-windows</TargetFramework>
+    <TargetFramework>net10.0-windows</TargetFramework>
       <ImplicitUsings>enable</ImplicitUsings>
       <Nullable>enable</Nullable>
       <Platforms>x64</Platforms>
@@ -12,7 +12,7 @@
       <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
   </PropertyGroup>
     <ItemGroup>
-        <PackageReference Include="AutoCAD.NET" Version="25.0.1" />
+        <PackageReference Include="AutoCAD.NET" Version="26.0.0" />
     </ItemGroup>
     <ItemGroup>
       <Compile Update="myCommands.Designer.vb">
@@ -28,4 +28,7 @@
         <LastGenOutput>myCommands.Designer.vb</LastGenOutput>
       </EmbeddedResource>
     </ItemGroup>
+	<ItemGroup>
+		<Folder Include="Properties\" />
+	</ItemGroup>
 </Project>
