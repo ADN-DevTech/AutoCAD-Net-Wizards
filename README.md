@@ -155,10 +155,10 @@ msbuild PluginVsix\PluginVsix.csproj /t:build /p:Configuration=Release;Platform=
 
 ### Uninstall Plugin VSIX
 
-- Through CLI
+- Through CLI (Use the Id field value in <Identifier> from .vsixmanifest file)
 
 ```bash
-vsixinstaller /u:AutoCAD2025_07DA9910-9E94-471B-BD32-565D05D4D857
+vsixinstaller /u:AutoCAD2027NETWiz_bfb2bba3-407d-4438-8408-80da1b122d65
 ```
 
 - Through UI
