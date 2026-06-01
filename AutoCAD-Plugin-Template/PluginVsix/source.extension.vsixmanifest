@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="PluginVsix" Version="1.0" Language="en-US" Publisher="Madhukar Moogala" />
+        <Identity Id="AutoCAD2027NETWiz_bfb2bba3-407d-4438-8408-80da1b122d65" Version="1.0" Language="en-US" Publisher="Madhukar Moogala" />
         <DisplayName>AutoCAD 2027 Template</DisplayName>
         <Description xml:space="preserve">AutoCAD 2027 project template for .NET 10.0</Description>
         <Icon>__TemplateIcon.ico</Icon>
